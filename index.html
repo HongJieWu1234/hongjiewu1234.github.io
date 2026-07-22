@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,16 @@
             box-sizing: border-box;
         }
         
+        html {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.9) 0%, rgba(27, 94, 32, 0.9) 50%, rgba(19, 74, 19, 0.9) 100%), url('./Image2.jpg') center/cover fixed;
+            background-color: #1b5e20;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
         }
         
         .container {
@@ -39,7 +43,7 @@
             font-size: 3em;
             color: #2c3e50;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #2e7d32, #1b5e20);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -63,37 +67,6 @@
             color: white;
             font-size: 3em;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        nav {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #2c3e50;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        nav a:hover {
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
         }
         
         .content {
@@ -127,7 +100,8 @@
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 30px rgba(255, 255, 255, 0.1);
             animation: slideInRight 0.6s ease-out;
         }
         
@@ -142,6 +116,18 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+        }
+        
+        .skill-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-logo:hover {
+            transform: scale(1.1);
         }
         
         .skill-tag {
@@ -273,7 +259,7 @@
         }
         
         .highlight {
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #2E8B57, #228B22);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -284,59 +270,18 @@
 <body>
     <div class="container">
         <header>
-            <div class="profile">HW</div>
+            <div class="profile"><img src="./Image1.jpeg" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"></div>
             <h1>Hong Jie Wu</h1>
             <p class="subtitle">Full Stack Developer & Tech Enthusiast</p>
-            <p>Creating awesome digital experiences with code and creativity</p>
         </header>
-        
-        <nav>
-            <ul>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </ul>
-        </nav>
         
         <div class="content">
             <main class="main-content">
                 <section id="about" class="about-me">
                     <h2>About <span class="highlight">Me</span></h2>
-                    <p>Hello! I'm Hong Jie Wu, a passionate developer who loves creating awesome websites and applications. With expertise in both front-end and back-end development, I bring ideas to life through clean, efficient code and beautiful design.</p>
+                    <p>I'm 17 and I love building things with code. I started learning to code a few years ago because I was curious about how websites and apps actually work, and it just stuck with me. I've been working on front-end and back-end projects ever since, and I'm always excited to learn new technologies and tackle interesting challenges.</p>
                     
-                    <p>My journey in tech started with a curiosity for how things work, and it has evolved into a career dedicated to building meaningful digital experiences. I believe that great code should not only work perfectly but also tell a story and inspire those who interact with it.</p>
-                    
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community. I strive to stay current with the latest industry trends and continuously improve my craft.</p>
-                </section>
-                
-                <section id="projects">
-                    <h2>Featured <span class="highlight">Projects</span></h2>
-                    <div class="project-grid">
-                        <div class="project-card">
-                            <h4>Personal Portfolio Website</h4>
-                            <p>A responsive portfolio website showcasing my skills and projects with modern animations and smooth transitions.</p>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                        
-                        <div class="project-card">
-                            <h4>Task Management App</h4>
-                            <p>A full-stack task management application with real-time updates, drag-and-drop functionality, and collaborative features.</p>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                        
-                        <div class="project-card">
-                            <h4>E-commerce Platform</h4>
-                            <p>A feature-rich e-commerce platform with product listings, shopping cart, and secure payment integration.</p>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                        
-                        <div class="project-card">
-                            <h4>Weather Dashboard</h4>
-                            <p>Real-time weather dashboard with interactive charts, location-based forecasts, and weather alerts.</p>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </div>
+                    <p>I'm really into creating clean, functional code that people can actually enjoy using. Whether it's designing an intuitive UI or optimizing backend logic, I try to bring the same attention to detail to everything I build. Right now I'm diving deeper into AI and LLMs because I think they're going to change how we build software.</p>
                 </section>
             </main>
             
@@ -344,18 +289,12 @@
                 <div class="card">
                     <h3>Technical <span class="highlight">Skills</span></h3>
                     <div class="skills-list">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">REST APIs</span>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-logo" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-logo" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-logo" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-logo" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo" />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-logo" />
                     </div>
                 </div>
                 
@@ -363,7 +302,7 @@
                     <h3>Current <span class="highlight">Focus</span></h3>
                     <p>🔨 Building scalable web applications</p>
                     <p>🎨 Exploring UI/UX design patterns</p>
-                    <p>☁️ Cloud architecture and DevOps</p>
+                    <p>🧠 Learning more about LLMs</p>
                     <p>🤖 Machine Learning integration</p>
                 </div>
             </aside>
